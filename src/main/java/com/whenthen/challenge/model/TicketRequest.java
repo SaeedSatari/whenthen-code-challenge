@@ -3,7 +3,7 @@ package com.whenthen.challenge.model;
 import lombok.Data;
 
 @Data
-public class RequestModel {
+public class TicketRequest {
 
     private String name;
     private String email;

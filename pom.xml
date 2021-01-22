@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<android-json.version>0.0.20131108.vaadin1</android-json.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,6 +36,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin.external.google</groupId>
+			<artifactId>android-json</artifactId>
+			<version>${android-json.version}</version>
 		</dependency>
 	</dependencies>
 
