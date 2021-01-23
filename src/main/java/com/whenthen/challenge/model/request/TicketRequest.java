@@ -1,4 +1,4 @@
-package com.whenthen.challenge.model;
+package com.whenthen.challenge.model.request;
 
 import lombok.Data;
 
