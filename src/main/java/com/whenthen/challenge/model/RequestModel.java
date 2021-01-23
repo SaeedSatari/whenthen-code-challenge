@@ -3,6 +3,6 @@ package com.whenthen.challenge.model;
 import lombok.Data;
 
 @Data
-public class PrioModel {
-    private String priority;
+public class RequestModel {
+    private TicketModel ticket;
 }

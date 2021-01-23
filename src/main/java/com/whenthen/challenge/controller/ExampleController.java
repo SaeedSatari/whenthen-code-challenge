@@ -1,13 +1,11 @@
 package com.whenthen.challenge.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.whenthen.challenge.client.RestClient;
 import com.whenthen.challenge.model.CommentModel;
-import com.whenthen.challenge.model.RootModel;
+import com.whenthen.challenge.model.RequestModel;
 import com.whenthen.challenge.model.TicketModel;
 import com.whenthen.challenge.model.TicketRequest;
 import lombok.AllArgsConstructor;
-import org.json.JSONException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +21,7 @@ public class ExampleController {
     private final RestClient restClient;
 
     @PostMapping(path = "/tickets")
-    public Map<String, Long> createSupportTicket(@RequestBody TicketRequest request) throws JSONException, JsonProcessingException {
+    public Map<String, Long> createSupportTicket(@RequestBody TicketRequest request) {
 
         CommentModel commentModel = new CommentModel();
         commentModel.setBody(request.getMessage());
@@ -33,9 +31,9 @@ public class ExampleController {
         ticketModel.setSubject(request.getSubject());
         ticketModel.setComment(commentModel);
 
-        RootModel rootModel = new RootModel();
-        rootModel.setTicket(ticketModel);
+        RequestModel requestModel = new RequestModel();
+        requestModel.setTicket(ticketModel);
 
-        return  restClient.createTicket(rootModel);
+        return restClient.createTicketAndCountPriorities(requestModel);
     }
 }
