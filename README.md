@@ -28,7 +28,7 @@ This project created to solve https://whenthen.com/ coding challenge.
     mvn spring-boot:run
 ```
 
-### Accessing to all the APIs
+### Accessing to the API using swagger
 
 You can access and try the api using this link: 
 
