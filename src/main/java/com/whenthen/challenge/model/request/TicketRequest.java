@@ -1,9 +1,11 @@
 package com.whenthen.challenge.model.request;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class TicketRequest {
 
     @ApiModelProperty(example = "Saeed Sattari", required = true)

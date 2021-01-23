@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @Builder
 public class CommentModel {
-    public String body;
+    private String body;
 }

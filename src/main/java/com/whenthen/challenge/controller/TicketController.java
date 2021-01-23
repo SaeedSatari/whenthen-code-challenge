@@ -17,7 +17,7 @@ import java.util.Random;
 @RestController
 @CrossOrigin
 @AllArgsConstructor
-@RequestMapping("api/tickets")
+@RequestMapping("/api/tickets")
 public class TicketController {
 
     private final RestClient restClient;
