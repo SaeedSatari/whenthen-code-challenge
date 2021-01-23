@@ -36,7 +36,7 @@ You can access and try the api using this link:
     http://localhost:8080/swagger-ui.html
 ```
 
-### Accessing the API using curl
+### Accessing to the API using curl
 
 ```curl
     curl --location --request POST 'localhost:8080/api/tickets' \
