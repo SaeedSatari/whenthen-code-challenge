@@ -53,7 +53,9 @@ public class RestClient {
 
     private HttpStatus createTicketAndGetHttpStatus(RequestModel requestModel) {
         HttpEntity<RequestModel> createTicketRequest = new HttpEntity<>(requestModel, getHeaders());
+        log.info("going to create a new support ticket with given request {}", requestModel.toString());
         ResponseEntity<String> createResponse = restTemplate.exchange(REST_SERVICE_URL, HttpMethod.POST, createTicketRequest, String.class);
+        log.info("creating a new support ticket with given request finished successfully {}", requestModel.toString());
         return createResponse.getStatusCode();
     }
 
@@ -77,7 +79,9 @@ public class RestClient {
     @SneakyThrows
     private JSONArray getTickets() {
         HttpEntity<MultiValueMap<String, String>> listTicketRequest = new HttpEntity<>(getHeaders());
+        log.info("going to retrieve list of the support tickets ");
         ResponseEntity<String> listTicketResponse = restTemplate.exchange(REST_SERVICE_URL, HttpMethod.GET, listTicketRequest, String.class);
+        log.info("retrieving the list of the support tickets finished successfully ");
         JSONObject listTicketResponseBody = new JSONObject(listTicketResponse.getBody());
         return listTicketResponseBody.getJSONArray("tickets");
     }
